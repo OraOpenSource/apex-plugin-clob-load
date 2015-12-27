@@ -25,8 +25,8 @@
       "plugin" : {
         "internalName" : "com.oraOpenSource.apex-plugin-clob-load",
         "type" : "dynamic action",
-        "demo" : "https://apex.oracle.com/pls/apex/f?p=57743:1",
-        "previewImage" : "https://raw.githubusercontent.com/Dani3lSun/apex-plugin-guidedtour/master/preview.png"
+        "demo" : "https://apex.oracle.com/pls/apex/f?p=62069:2",
+        "previewImage" : "https://github.com/OraOpenSource/apex-plugin-clob-load/blob/master/doc/img/example-screen.jpg"
       }
     }
   }

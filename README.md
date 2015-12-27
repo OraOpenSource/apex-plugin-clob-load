@@ -19,11 +19,11 @@ The included application is a working basic example of plugin.
 
 
 ## Content
-**apex-clob-plugin.sql**
-Plugin Only
+**apex-plugin-clob-load.sql**
+* Plugin Only
 
-**apex-clob-plugin-SampleApp.sql**
-Basic example of CLOB plugin used in a sample application
+**apex-plugin-clob-load-SampleApp.sql**
+* Basic example of CLOB plugin used in a sample application
 
 
 # Demonstration Application
