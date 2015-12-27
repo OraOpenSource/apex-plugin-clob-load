@@ -1,4 +1,4 @@
-# APEX Clob Plugin
+# APEX Plugin CLOB Load
 Plugin for displaying and saving CLOB content in a form.
 
 Event based architecture that writes the contents of a CLOB to a collection that can then be used to write to any custom location needed.
@@ -35,7 +35,7 @@ Basic implementation sample application
 APEX 5.0.0 +
 
 # Historical Credits
-Dan McGhan
-Tyson Jouglet
-https://www.enkitec.com/products/plugins/clob-load/help
+* Dan McGhan
+* Tyson Jouglet
+* https://www.enkitec.com/products/plugins/clob-load/help
 
