@@ -13,10 +13,10 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2013.01.01'
-,p_release=>'5.0.1.00.06'
-,p_default_workspace_id=>822925097021874
-,p_default_application_id=>68570
-,p_default_owner=>'ASKTOM'
+,p_release=>'5.0.0.00.31'
+,p_default_workspace_id=>5283994202289341
+,p_default_application_id=>108
+,p_default_owner=>'BLOB_CLOB'
 );
 end;
 /
@@ -28,7 +28,7 @@ end;
 prompt --application/shared_components/plugins/dynamic_action/apex_clob_load
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488457818203751497)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'APEX_CLOB_LOAD'
 ,p_display_name=>'APEX CLOB Load'
@@ -198,12 +198,14 @@ wwv_flow_api.create_plugin(
 ,p_standard_attributes=>'ITEM:JQUERY_SELECTOR:REQUIRED'
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
-,p_version_identifier=>'1.0'
+,p_help_text=>'https://github.com/OraOpenSource/apex-plugin-clob-load'
+,p_version_identifier=>'5.0'
+,p_about_url=>'https://github.com/OraOpenSource/apex-plugin-clob-load'
 ,p_files_version=>53
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482546396723458856)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488461472171751506)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -215,22 +217,22 @@ wwv_flow_api.create_plugin_attribute(
 ,p_lov_type=>'STATIC'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(32482546926800458857)
-,p_plugin_attribute_id=>wwv_flow_api.id(32482546396723458856)
+ p_id=>wwv_flow_api.id(32488462002248751507)
+,p_plugin_attribute_id=>wwv_flow_api.id(32488461472171751506)
 ,p_display_sequence=>10
 ,p_display_value=>'Render'
 ,p_return_value=>'RENDER'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(32482547483214458857)
-,p_plugin_attribute_id=>wwv_flow_api.id(32482546396723458856)
+ p_id=>wwv_flow_api.id(32488462558662751507)
+,p_plugin_attribute_id=>wwv_flow_api.id(32488461472171751506)
 ,p_display_sequence=>20
 ,p_display_value=>'Submit'
 ,p_return_value=>'SUBMIT'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482548002929458857)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488463078377751507)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -239,28 +241,28 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_required=>true
 ,p_default_value=>'SQL_QUERY'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(32482546396723458856)
+,p_depending_on_attribute_id=>wwv_flow_api.id(32488461472171751506)
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'RENDER'
 ,p_lov_type=>'STATIC'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(32482548339551458858)
-,p_plugin_attribute_id=>wwv_flow_api.id(32482548002929458857)
+ p_id=>wwv_flow_api.id(32488463414999751508)
+,p_plugin_attribute_id=>wwv_flow_api.id(32488463078377751507)
 ,p_display_sequence=>10
 ,p_display_value=>'Collection'
 ,p_return_value=>'COLLECTION'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(32482548884100458858)
-,p_plugin_attribute_id=>wwv_flow_api.id(32482548002929458857)
+ p_id=>wwv_flow_api.id(32488463959548751508)
+,p_plugin_attribute_id=>wwv_flow_api.id(32488463078377751507)
 ,p_display_sequence=>20
 ,p_display_value=>'SQL Query'
 ,p_return_value=>'SQL_QUERY'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482549351247458858)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488464426695751508)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -270,13 +272,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_display_length=>50
 ,p_max_length=>255
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(32482548002929458857)
+,p_depending_on_attribute_id=>wwv_flow_api.id(32488463078377751507)
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'COLLECTION'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482549720934458858)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488464796382751508)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
@@ -286,13 +288,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_sql_min_column_count=>1
 ,p_sql_max_column_count=>1
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(32482548002929458857)
+,p_depending_on_attribute_id=>wwv_flow_api.id(32488463078377751507)
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'SQL_QUERY'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482550296528458859)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488465371976751509)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
@@ -302,13 +304,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_display_length=>50
 ,p_max_length=>255
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(32482546396723458856)
+,p_depending_on_attribute_id=>wwv_flow_api.id(32488461472171751506)
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'SUBMIT'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482550648309458859)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488465723757751509)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
@@ -317,13 +319,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_required=>false
 ,p_default_value=>'Y'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(32482546396723458856)
+,p_depending_on_attribute_id=>wwv_flow_api.id(32488461472171751506)
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'SUBMIT'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32482551222915458859)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488466298363751509)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
@@ -332,13 +334,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_required=>false
 ,p_default_value=>'Y'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(32482546396723458856)
+,p_depending_on_attribute_id=>wwv_flow_api.id(32488461472171751506)
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'SUBMIT'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(32483101633730698490)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32489016709178991140)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>80
@@ -349,14 +351,14 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_event(
- p_id=>wwv_flow_api.id(32482555809756458870)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488470885204751520)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_name=>'apexclobloadrendercomplete'
 ,p_display_name=>'CLOB(s) Render Complete'
 );
 wwv_flow_api.create_plugin_event(
- p_id=>wwv_flow_api.id(32482556196516458870)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32488471271964751520)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_name=>'apexclobloadsubmitcomplete'
 ,p_display_name=>'CLOB(s) Submit Complete'
 );
@@ -443,8 +445,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(32483120017000704591)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32489035092448997241)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_file_name=>'apex-clob-load.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -490,8 +492,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(32483120550156705420)
-,p_plugin_id=>wwv_flow_api.id(32482542742755458847)
+ p_id=>wwv_flow_api.id(32489035625604998070)
+,p_plugin_id=>wwv_flow_api.id(32488457818203751497)
 ,p_file_name=>'apex-clob-load-worker.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
