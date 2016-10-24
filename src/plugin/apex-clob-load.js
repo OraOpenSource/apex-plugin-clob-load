@@ -116,7 +116,7 @@ $.widget('ui.apexClobLoad', {
          worker;
 
       elmt = opts.$elmt[0];
-      clobData = $v(elmt);
+      clobData = $(elmt).val();
       defaultValue = $.data(elmt, 'defaultValue');
       $s(elmt, ''); //added due to trouble submitting page, look into catching errors and putting values back
 
@@ -149,12 +149,12 @@ $.widget('ui.apexClobLoad', {
                async: false,
                context: this,
                success: function(data){
-                  uiw._handleSubmitClobSuccess();
+                  uiw._handleSubmitClobSuccess(opts);
                }
             });
          } else {
             if (window.Worker) { //Web workers supported, move to background job
-               worker = new Worker(uiw.options.pluginFilePrefix + 'enkitec-clob-load-worker.min.js');
+               worker = new Worker(uiw.options.pluginFilePrefix + 'apex-clob-load-worker.js');
 
                //Using native bindings as jQuery's causes problems with workers
                worker.addEventListener('message', function(e) {
@@ -190,7 +190,7 @@ $.widget('ui.apexClobLoad', {
                   async: true,
                   context: this,
                   success: function(data){
-                     uiw._handleSubmitClobSuccess();
+                     uiw._handleSubmitClobSuccess(opts);
                   }
                });
             }

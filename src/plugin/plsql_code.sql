@@ -125,10 +125,13 @@ BEGIN
          END IF;
       END IF;
       
-      FOR i IN 0 .. FLOOR(LENGTH(l_clob_text)/l_chunk_size)
-      LOOP
-         sys.htp.prn(substr(l_clob_text, i * l_chunk_size + 1, l_chunk_size));
-      END LOOP;
+      IF LENGTH(l_clob_text) > 0
+      THEN
+          FOR i IN 0 .. FLOOR(LENGTH(l_clob_text)/l_chunk_size)
+          LOOP
+             sys.htp.prn(substr(l_clob_text, i * l_chunk_size + 1, l_chunk_size));
+          END LOOP;
+      END IF;
    ELSE --must be SUBMIT_CLOB
       dbms_lob.createtemporary(l_clob_text, false, dbms_lob.session);
 
