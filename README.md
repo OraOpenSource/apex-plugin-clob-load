@@ -37,5 +37,5 @@ APEX 5.0.0 +
 # Historical Credits
 * Dan McGhan
 * Tyson Jouglet
-* https://www.enkitec.com/products/plugins/clob-load/help
+* Enkitec Plugin Repository
 
