@@ -1,7 +1,7 @@
 {
-  "name" : "apex-plugin-clob-load",
-  "version" : "1.0",
-  "description" : "xx",
+  "name" : "CLOB Load Plugin",
+  "version" : "1.1",
+  "description" : "Dynamic Action plugin that allows the reading and writing of CLOB data from a standard form submit process.",
   "keywords" : ["clob", "dynamic", "item"],
   "homepage" : "https://github.com/OraOpenSource/apex-plugin-clob-load",
   "bugs" : {
