@@ -116,22 +116,7 @@ $.widget('ui.apexClobLoad', {
          worker;
 
       elmt = opts.$elmt[0];
-      // CASE - when using rich text editor vs standard text area.
-      if ($(elmt).hasClass("rich_text_editor")) {
-         // rich text CK editor - determine mode
-         if ($(elmt).parent().find("iframe").length) {
-            // using the standard rich text editor
-            clobData = $(elmt).parent().find("iframe").contents().find("body").html();
-         } else {
-            // using "source" editor
-            // no iframe - but adds a text area (5.0.0 verified)
-            clobData = $(elmt).parent().find("textarea").eq(1).val();
-         }
-      } else {
-         // using standard TEXT AREA
-         clobData = $(elmt).val();
-      }
-
+      clobData = $(elmt).val();
       defaultValue = $.data(elmt, 'defaultValue');
       $s(elmt, ''); //added due to trouble submitting page, look into catching errors and putting values back
 
