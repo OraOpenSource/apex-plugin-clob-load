@@ -27,7 +27,7 @@ prompt APPLICATION 123 - APEX CLOB Load Plugin Unit Testing Application
 -- Application Export:
 --   Application:     123
 --   Name:            APEX CLOB Load Plugin Unit Testing Application
---   Date and Time:   11:15 Thursday June 22, 2017
+--   Date and Time:   11:46 Thursday June 22, 2017
 --   Exported By:     ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,12 +36,12 @@ prompt APPLICATION 123 - APEX CLOB Load Plugin Unit Testing Application
 --
 
 -- Application Statistics:
---   Pages:                      5
---     Items:                   29
---     Processes:               14
---     Regions:                  5
---     Buttons:                 18
---     Dynamic Actions:          9
+--   Pages:                      4
+--     Items:                   20
+--     Processes:               10
+--     Regions:                  4
+--     Buttons:                 13
+--     Dynamic Actions:          6
 --   Shared Components:
 --     Logic:
 --       Processes:              1
@@ -49,7 +49,7 @@ prompt APPLICATION 123 - APEX CLOB Load Plugin Unit Testing Application
 --       Lists:                  2
 --       Breadcrumbs:            1
 --     Security:
---       Authentication:         1
+--       Authentication:         2
 --     User Interface:
 --       Themes:                 1
 --       Templates:
@@ -95,7 +95,7 @@ wwv_flow_api.create_flow(
 ,p_flow_language_derived_from=>'0'
 ,p_flow_image_prefix => nvl(wwv_flow_application_install.get_image_prefix,'')
 ,p_authentication=>'PLUGIN'
-,p_authentication_id=>wwv_flow_api.id(17610454010702655)
+,p_authentication_id=>wwv_flow_api.id(12216110419079681)
 ,p_application_tab_set=>0
 ,p_logo_image=>'TEXT:APEX CLOB Load Plugin Unit Testing Application'
 ,p_public_user=>'APEX_PUBLIC_USER'
@@ -110,7 +110,7 @@ wwv_flow_api.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20170622111212'
+,p_last_upd_yyyymmddhh24miss=>'20170622114507'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -5725,6 +5725,13 @@ end;
 prompt --application/shared_components/security/authentications
 begin
 wwv_flow_api.create_authentication(
+ p_id=>wwv_flow_api.id(12216110419079681)
+,p_name=>'Open Door'
+,p_scheme_type=>'NATIVE_OPEN_DOOR'
+,p_use_secure_cookie_yn=>'N'
+,p_ras_mode=>0
+);
+wwv_flow_api.create_authentication(
  p_id=>wwv_flow_api.id(17610454010702655)
 ,p_name=>'APEX'
 ,p_scheme_type=>'NATIVE_APEX_ACCOUNTS'
@@ -5917,7 +5924,7 @@ wwv_flow_api.create_plugin(
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>'https://github.com/OraOpenSource/apex-plugin-clob-load'
-,p_version_identifier=>'2018.06.21'
+,p_version_identifier=>'2017.06.21'
 ,p_about_url=>'https://github.com/OraOpenSource/apex-plugin-clob-load'
 ,p_files_version=>63
 );
@@ -7473,426 +7480,6 @@ wwv_flow_api.create_page_process(
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'Get Username Cookie'
 ,p_process_sql_clob=>':P101_USERNAME := apex_authentication.get_login_username_cookie;'
-);
-end;
-/
-prompt --application/pages/page_00444
-begin
-wwv_flow_api.create_page(
- p_id=>444
-,p_user_interface_id=>wwv_flow_api.id(17610208645702641)
-,p_name=>'Rich Text'
-,p_page_mode=>'NORMAL'
-,p_step_title=>'Rich Text'
-,p_step_sub_title=>'Rich Text'
-,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
-,p_first_item=>'NO_FIRST_ITEM'
-,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
-,p_page_template_options=>'#DEFAULT#'
-,p_overwrite_navigation_list=>'N'
-,p_page_is_public_y_n=>'N'
-,p_protection_level=>'C'
-,p_cache_mode=>'NOCACHE'
-,p_help_text=>'No help is available for this page.'
-,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20170622095558'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(12180030590434793)
-,p_plug_name=>'Basic Text Area'
-,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_api.id(17584259173702605)
-,p_plug_display_sequence=>10
-,p_include_in_reg_disp_sel_yn=>'N'
-,p_plug_display_point=>'BODY'
-,p_plug_query_row_template=>1
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'N'
-,p_attribute_02=>'TEXT'
-,p_attribute_03=>'Y'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(12180362427434796)
-,p_button_sequence=>40
-,p_button_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_button_name=>'ADD_10000'
-,p_button_action=>'DEFINED_BY_DA'
-,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
-,p_button_template_id=>wwv_flow_api.id(17605170539702626)
-,p_button_is_hot=>'Y'
-,p_button_image_alt=>'Add 10'
-,p_button_position=>'BODY'
-,p_button_execute_validations=>'N'
-,p_icon_css_classes=>'fa-flash'
-,p_grid_new_row=>'Y'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(12180720678434798)
-,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_button_name=>'CANCEL'
-,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_api.id(17605001166702626)
-,p_button_image_alt=>'Cancel'
-,p_button_position=>'TOP_AND_BOTTOM'
-,p_button_alignment=>'LEFT'
-,p_button_redirect_url=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:::'
-,p_grid_new_grid=>false
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(12181157612434799)
-,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_button_name=>'DELETE'
-,p_button_action=>'REDIRECT_URL'
-,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
-,p_button_template_id=>wwv_flow_api.id(17605170539702626)
-,p_button_image_alt=>'Delete'
-,p_button_position=>'TOP_AND_BOTTOM'
-,p_button_redirect_url=>'javascript:apex.confirm(htmldb_delete_message,''DELETE'');'
-,p_button_execute_validations=>'N'
-,p_button_condition=>'P444_CLOB_ID'
-,p_button_condition_type=>'ITEM_IS_NOT_NULL'
-,p_icon_css_classes=>'fa-trash-o'
-,p_database_action=>'DELETE'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(12181577272434799)
-,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_button_name=>'SAVE'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
-,p_button_template_id=>wwv_flow_api.id(17605170539702626)
-,p_button_is_hot=>'Y'
-,p_button_image_alt=>'Apply Changes'
-,p_button_position=>'TOP_AND_BOTTOM'
-,p_button_condition=>'P444_CLOB_ID'
-,p_button_condition_type=>'ITEM_IS_NOT_NULL'
-,p_icon_css_classes=>'fa-check'
-,p_database_action=>'UPDATE'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(12181916443434800)
-,p_button_sequence=>40
-,p_button_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_button_name=>'CREATE'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
-,p_button_template_id=>wwv_flow_api.id(17605170539702626)
-,p_button_is_hot=>'Y'
-,p_button_image_alt=>'Create'
-,p_button_position=>'TOP_AND_BOTTOM'
-,p_button_condition=>'P444_CLOB_ID'
-,p_button_condition_type=>'ITEM_IS_NULL'
-,p_icon_css_classes=>'fa-plus'
-,p_database_action=>'INSERT'
-);
-wwv_flow_api.create_page_branch(
- p_id=>wwv_flow_api.id(12190307655434833)
-,p_branch_action=>'f?p=&APP_ID.:2:&SESSION.&success_msg=#SUCCESS_MSG#'
-,p_branch_point=>'AFTER_PROCESSING'
-,p_branch_type=>'REDIRECT_URL'
-,p_branch_sequence=>1
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12182359698434801)
-,p_name=>'P444_CLOB_ID'
-,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Clob Id'
-,p_source=>'CLOB_ID'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_HIDDEN'
-,p_label_alignment=>'RIGHT'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_protection_level=>'S'
-,p_attribute_01=>'Y'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12182767154434805)
-,p_name=>'P444_NAME'
-,p_item_sequence=>20
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Name'
-,p_source=>'NAME'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>32
-,p_cMaxlength=>100
-,p_label_alignment=>'RIGHT'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_03=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'NONE'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12183106611434805)
-,p_name=>'P444_DESCRIPTION'
-,p_item_sequence=>30
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Description (2000 characters)'
-,p_source=>'DESCRIPTION'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_RICH_TEXT_EDITOR'
-,p_cSize=>60
-,p_cMaxlength=>2000
-,p_cHeight=>5
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'CKEDITOR3'
-,p_attribute_02=>'Basic'
-,p_attribute_03=>'Y'
-,p_attribute_05=>'top'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12183571380434806)
-,p_name=>'P444_CLOB_CONTENT'
-,p_item_sequence=>50
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Clob Content'
-,p_source=>'CLOB_CONTENT'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_RICH_TEXT_EDITOR'
-,p_cSize=>60
-,p_cMaxlength=>100000000000000
-,p_cHeight=>5
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'CKEDITOR3'
-,p_attribute_02=>'Intermediate'
-,p_attribute_03=>'Y'
-,p_attribute_05=>'top'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12183999791434806)
-,p_name=>'P444_CLOB_SIZE'
-,p_item_sequence=>60
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Clob Size'
-,p_source=>'CLOB_SIZE'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'VALUE'
-,p_attribute_04=>'Y'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12184396794434807)
-,p_name=>'P444_CREATED_BY'
-,p_item_sequence=>70
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Created By'
-,p_source=>'CREATED_BY'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'VALUE'
-,p_attribute_04=>'Y'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12184783075434808)
-,p_name=>'P444_CREATED_ON'
-,p_item_sequence=>80
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Created On'
-,p_source=>'CREATED_ON'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'VALUE'
-,p_attribute_04=>'Y'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12185108975434808)
-,p_name=>'P444_UPDATED_BY'
-,p_item_sequence=>90
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Updated By'
-,p_source=>'UPDATED_BY'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'VALUE'
-,p_attribute_04=>'Y'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(12185596285434808)
-,p_name=>'P444_UPDATED_ON'
-,p_item_sequence=>100
-,p_item_plug_id=>wwv_flow_api.id(12180030590434793)
-,p_use_cache_before_default=>'NO'
-,p_prompt=>'Updated On'
-,p_source=>'UPDATED_ON'
-,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(17604536688702625)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'VALUE'
-,p_attribute_04=>'Y'
-);
-wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(12187562459434828)
-,p_name=>'Add 10K random'
-,p_event_sequence=>10
-,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_api.id(12180362427434796)
-,p_bind_type=>'bind'
-,p_bind_event_type=>'click'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(12188003704434830)
-,p_event_id=>wwv_flow_api.id(12187562459434828)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'NATIVE_JAVASCRIPT_CODE'
-,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'function makeid()',
-'{',
-'    var text = "";',
-'    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";',
-'',
-'    for( var i=0; i < 10000; i++ )',
-'        text += possible.charAt(Math.floor(Math.random() * possible.length));',
-'',
-'    return text;',
-'};',
-'',
-'apex.item(''P444_CLOB_CONTENT'').setValue($v(''P444_CLOB_CONTENT'')+makeid());',
-''))
-,p_stop_execution_on_error=>'Y'
-);
-wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(12188423574434831)
-,p_name=>'Clob to Table'
-,p_event_sequence=>20
-,p_bind_type=>'bind'
-,p_bind_event_type=>'apexbeforepagesubmit'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(12188953706434831)
-,p_event_id=>wwv_flow_api.id(12188423574434831)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'PLUGIN_APEX_CLOB_LOAD'
-,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P444_CLOB_CONTENT'
-,p_attribute_01=>'SUBMIT'
-,p_attribute_05=>'APEX_CLOB_PLUGIN'
-,p_attribute_06=>'N'
-,p_attribute_07=>'Y'
-,p_attribute_08=>'Y'
-,p_stop_execution_on_error=>'Y'
-,p_da_action_comment=>'This writes the CLOB to the Collection.'
-);
-wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(12189369946434832)
-,p_name=>'APEX Clob Plugin - Fetch'
-,p_event_sequence=>30
-,p_bind_type=>'bind'
-,p_bind_event_type=>'ready'
-,p_display_when_type=>'ITEM_IS_NOT_NULL'
-,p_display_when_cond=>'P444_CLOB_ID'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(12189831779434832)
-,p_event_id=>wwv_flow_api.id(12189369946434832)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'PLUGIN_APEX_CLOB_LOAD'
-,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P444_CLOB_CONTENT'
-,p_attribute_01=>'RENDER'
-,p_attribute_02=>'SQL_QUERY'
-,p_attribute_04=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'SELECT CLOB_CONTENT ',
-'FROM CLOB_TEST ',
-'WHERE CLOB_ID = :P444_CLOB_ID',
-'AND DBMS_LOB.GETLENGTH(CLOB_CONTENT)>0'))
-,p_attribute_08=>'Y'
-,p_stop_execution_on_error=>'Y'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(12185974438434823)
-,p_process_sequence=>10
-,p_process_point=>'AFTER_HEADER'
-,p_process_type=>'NATIVE_FORM_FETCH'
-,p_process_name=>'Fetch Row from CLOB_TEST'
-,p_attribute_02=>'CLOB_TEST'
-,p_attribute_03=>'P444_CLOB_ID'
-,p_attribute_04=>'CLOB_ID'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(12186343542434825)
-,p_process_sequence=>30
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_FORM_PROCESS'
-,p_process_name=>'Process Row of CLOB_TEST'
-,p_attribute_02=>'CLOB_TEST'
-,p_attribute_03=>'P444_CLOB_ID'
-,p_attribute_04=>'CLOB_ID'
-,p_attribute_09=>'P444_CLOB_ID'
-,p_attribute_11=>'I:U:D'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_success_message=>'Action Processed.'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(12186713990434826)
-,p_process_sequence=>40
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Process APEX_CLOB_PLUGIN Collection value'
-,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'DECLARE',
-'   l_clob CLOB;',
-'BEGIN',
-'',
-'   SELECT clob001',
-'   INTO l_clob',
-'   FROM apex_collections',
-'   WHERE collection_name = ''APEX_CLOB_PLUGIN'';',
-'',
-'    -- update CLOB by ID',
-'    UPDATE CLOB_TEST',
-'    SET clob_content = l_clob',
-'    WHERE clob_id = :P444_CLOB_ID;',
-'END;'))
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(12187100932434827)
-,p_process_sequence=>50
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_SESSION_STATE'
-,p_process_name=>'reset page'
-,p_attribute_01=>'CLEAR_CACHE_CURRENT_PAGE'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_api.id(12181157612434799)
 );
 end;
 /

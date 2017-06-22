@@ -202,7 +202,7 @@ wwv_flow_api.create_plugin(
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>'https://github.com/OraOpenSource/apex-plugin-clob-load'
-,p_version_identifier=>'2018.06.21'
+,p_version_identifier=>'2017.06.21'
 ,p_about_url=>'https://github.com/OraOpenSource/apex-plugin-clob-load'
 ,p_files_version=>63
 );
