@@ -94,7 +94,8 @@ $.widget('ui.apexClobLoad', {
    _handleClobRenderSuccess: function(data, opts) {
       var uiw = this;
 
-      $s(opts.$elmt[0], data);
+      // $s(opts.$elmt[0], data);
+      apex.item(opts.$elmt[0]).setValue(data);
       $.data(opts.$elmt[0], 'defaultValue', data);
 
       if (opts.showSpinner === 'Y') {
@@ -118,19 +119,13 @@ $.widget('ui.apexClobLoad', {
       elmt = opts.$elmt[0];
       // CASE - when using rich text editor vs standard text area.
       if ($(elmt).hasClass("rich_text_editor")) {
-         // rich text CK editor - determine mode
-         if ($(elmt).parent().find("iframe").length) {
-            // using the standard rich text editor
-            clobData = $(elmt).parent().find("iframe").contents().find("body").html();
-         } else {
-            // using "source" editor
-            // no iframe - but adds a text area (5.0.0 verified)
-            clobData = $(elmt).parent().find("textarea").eq(1).val();
-         }
-      } else {
-         // using standard TEXT AREA
-         clobData = $(elmt).val();
+        // Due to race condition, 1s delay is added before the getValue()
+        // This is not an ideal solution.  Suggestions welcome.
+        setTimeout(function(){void(0);}, 1000);
       }
+
+      // Leverage APEX JS library
+      clobData = apex.item(elmt).getValue();
 
       defaultValue = $.data(elmt, 'defaultValue');
       $s(elmt, ''); //added due to trouble submitting page, look into catching errors and putting values back
