@@ -37,6 +37,10 @@ APEX 5.0.0 +
 # Version Notes
 Short description of changes
 
+## 2017.08.04 (release)
+    Improvements to Unit test app
+    Rich Text - race condition patch
+
 ## 2017.06.21 (being tested)
     New version structure
     Bug fix for Rich Text Area
