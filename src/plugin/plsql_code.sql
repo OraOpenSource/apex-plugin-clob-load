@@ -125,9 +125,9 @@ BEGIN
          END IF;
       END IF;
       
-      IF LENGTH(l_clob_text) > 0
+      IF dbms_lob.getlength(l_clob_text) > 0
       THEN
-          FOR i IN 0 .. FLOOR(LENGTH(l_clob_text)/l_chunk_size)
+          FOR i IN 0 .. FLOOR(dbms_lob.getlength(l_clob_text)/l_chunk_size)
           LOOP
              sys.htp.prn(substr(l_clob_text, i * l_chunk_size + 1, l_chunk_size));
           END LOOP;
@@ -139,9 +139,9 @@ BEGIN
       LOOP
          l_token := wwv_flow.g_f01(i);
 
-         IF length(l_token) > 0
+         IF dbms_lob.getlength(l_token) > 0
          THEN
-            dbms_lob.writeappend(l_clob_text, length(l_token), l_token);
+            dbms_lob.writeappend(l_clob_text, dbms_lob.getlength(l_token), l_token);
          END IF;
       END LOOP;
 
