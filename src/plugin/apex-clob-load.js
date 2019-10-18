@@ -103,7 +103,9 @@ $.widget('ui.apexClobLoad', {
       }
 
       if (uiw._getDialogCount() === 0) {
-         uiw._values.spinner.remove();
+         if (opts.showSpinner === 'Y') {
+           uiw._values.spinner.remove();
+         }
 
          $(document).trigger('apexclobloadrendercomplete');
       }
@@ -215,7 +217,9 @@ $.widget('ui.apexClobLoad', {
       }
 
       if (uiw._getDialogCount() === 0) {
-         uiw._values.spinner.remove();
+         if (opts.showSpinner === 'Y') {
+           uiw._values.spinner.remove();
+         }
 
          $(document).trigger('apexclobloadsubmitcomplete');
       }
