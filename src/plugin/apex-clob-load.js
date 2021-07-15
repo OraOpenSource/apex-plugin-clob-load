@@ -151,7 +151,7 @@ $.widget('ui.apexClobLoad', {
                f01: []
             };
 
-            queryString = uiw._chunkClob(clobData, 30000,  queryString);
+            queryString = uiw._chunkClob(clobData, 15000,  queryString);
 
             $.ajax({
                type: 'POST',
